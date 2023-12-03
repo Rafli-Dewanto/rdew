@@ -27,7 +27,7 @@ const projects: Project[] = [
   {
     title: "Linktree Clone",
     techs: ["ReactJS (NextJS)", "JavaScript", "TailwindCSS"],
-    link: "https://rdew.vercel.app",
+    link: "https://dewantolink.vercel.app",
     isComingSoon: false,
   },
 ];
