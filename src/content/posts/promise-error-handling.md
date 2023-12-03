@@ -1,5 +1,5 @@
 ---
-title: "Ways i love to handle error in JavaScript Promises"
+title: "Ways I Love to Handle Errors in JavaScript Promises"
 publishedAt: 2023-12-03
 description: "Handling error in JavaScript promises"
 slug: "javascript-promise-error-handling"
