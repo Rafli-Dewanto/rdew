@@ -149,6 +149,21 @@ if (error) {
   // handle error
 }
 ```
+
+Dengan cara ini juga kita bisa memanggil beberapa promise dengan satu baris,
+```js
+const [data1, error1] = await handlePromise1();
+const [data2, error2] = await handlePromise2();
+
+if (error1) {
+  // handle error
+}
+
+if (error2) {
+  // handle error
+}
+```
+
 Jika kalian merupakan programmer golang mungkin kalian sudah familiar dengan pattern ini, menurut saya pattern ini merupakan salah satu cara terbaik untuk menghandle error karena kita tidak lagi perlu menggunakan try-catch block. Jika kalian menggunakan TypeScript kalian bisa define types-nya dengan tuple.
 ```ts
 type DataTuple = [Data[] | null, null | string];
