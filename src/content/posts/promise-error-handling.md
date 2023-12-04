@@ -100,7 +100,7 @@ const promise3 = Promise.reject("Error");
 
 async function handle() {
   const [p1, p2, p3] = await Promise.allSettled([promise1, promise2, promise3]);
-  // // promise 1
+  // promise 1
   if (p1.result === "fulfilled") {
     const value = p1.value;
   } else {
