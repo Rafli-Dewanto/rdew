@@ -11,6 +11,7 @@ import convertAsteriskToStrongTag from "@/utils/convertAsteriskToStrongTag";
 
 import presentation from "@/data/presentation";
 import projects from "@/data/projects";
+import Badge from "@/components/badge.astro";
 
 const posts = (await getCollection("posts")).sort(function (first, second) {
     return second.data.publishedAt.getTime() - first.data.publishedAt.getTime();
@@ -54,7 +55,7 @@ const og = {
                 />
                 <!-- cv -->
                 <a
-                    class='group flex w-full max-w-[8rem] items-center justify-center rounded-3xl bg-white bg-opacity-20 px-4 py-2 backdrop-blur-lg transition-all hover:-translate-y-1 hover:bg-white hover:text-slate-950'
+                    class='group flex w-fit max-w-[8rem] items-center justify-center rounded-xl bg-neutral-800 px-4 py-2 backdrop-blur-lg transition-all hover:-translate-y-1 hover:bg-neutral-100 hover:text-slate-950 active:scale-95 active:bg-neutral-200'
                     href='/cv_rafli@latest.pdf'
                     target='_blank'
                 >
