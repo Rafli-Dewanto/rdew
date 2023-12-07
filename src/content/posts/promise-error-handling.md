@@ -178,7 +178,45 @@ async function getData(): Promise<DataTuple> {
   }
 }
 ```
-Dengan menggunakan array destructuring, kita dapat dengan mudah mengakses dan mengelola hasil operasi asinkron serta pesan kesalahan, membuat kode lebih ekspresif dan maintainable. Tentunya cara yang saya sebut di atas tidak sempurna dan masih banyak lagi cara untuk handle error promise di JavaScript, namun ini merupakan cara yang saya pribadi gunakan.
+
+## Promise.allSettled + Golang style
+Cara ini merupakan gabungan dari promise.allSettled dan kita akan memodifikasinya dengan golang error handling.
+```js
+function promiseWrapper(promise) {
+  return Promise.allSettled([promise]).then(([{ value, reason }]) => {
+    // kita bisa menggunakan object maupun array, disini saya menggunakan object agar lebih akurat ketika kita menggunakan TypeScript
+    return { data: value, error: reason }
+  })
+}
+```
+Disini kita membuat sebuah utility function yang mana kita bisa passing sebuah promise dalam fungsi ini yang nantinya kita akan mendapatkan either data maupun error jika promise berakhir dengan reject. Lalu kita bisa menggunakannya seperti contoh di bawah,
+```js
+const { data, error } = await promiseWrapper(promise);
+if (error) {
+  // handle it
+}
+// no error
+```
+
+Jika kita memiliki banyak promise dan ingin menggunakan utility function ini, kita bisa rename variablenya dengan object destructuring agar tidak terjadi conflict
+
+```js
+
+const { data: data1, error: error1 } = await promiseWrapper(promise1);
+const { data: data2, error: error2 } = await promiseWrapper(promise2);
+
+if (error1) {
+  // handle it
+}
+
+if (error2) {
+
+}
+// no error
+
+```
+
+Tentunya cara yang saya sebut di atas tidak sempurna dan masih banyak lagi cara untuk handle error promise di JavaScript, namun ini merupakan cara yang saya pribadi gunakan.
 
 Semoga dengan artikel ini bisa membantu kalian dan juga menambah insights tentang promise di JavaScript❤️.
 
