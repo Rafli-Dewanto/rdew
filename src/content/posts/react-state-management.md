@@ -37,8 +37,8 @@ Dalam model uni-directional state management, data mengalir dalam satu arah, umu
 
 **Karakteristik:**
 
--   Penyimpanan terpusat: Seluruh keadaan aplikasi disimpan dalam satu penyimpanan terpusat.
--   Imutabilitas: Keadaan umumnya bersifat imutabel, dan perubahan dilakukan melalui pembuatan objek keadaan baru. Dalam pola state management ini, struktur unidireksional memastikan bahwa setiap perubahan keadaan diinisiasi oleh aksi dan direspons oleh _pure function_ yang menghasilkan state baru.
+-   Penyimpanan terpusat: Seluruh state aplikasi disimpan dalam satu penyimpanan terpusat.
+-   Imutabilitas: state umumnya bersifat _immutable_, dan perubahan dilakukan melalui pembuatan objek state baru. Dalam pola state management ini, struktur unidireksional memastikan bahwa setiap perubahan state diinisiasi oleh aksi dan direspons oleh _pure function_ yang menghasilkan state baru.
 
 ### Redux
 
@@ -116,14 +116,14 @@ Secara konseptual, Zustand dan Redux sangat mirip, keduanya didasarkan pada _imm
 ![bi-directional](https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fpublic-files%2Freact_state_management-251c37369475e875c61a479c056745ca.png)
 Source: [toptal](https://www.toptal.com/react/react-state-management-tools-enterprise)
 
-State management bi-direksional memungkinkan aliran data yang lebih fleksibel, di mana perubahan dalam keadaan dapat dipropagasi ke kedua arah. Hal ini sering terkait dengan [_reactive programming_](https://www.baeldung.com/cs/reactive-programming#:~:text=Reactive%20programming%20is%20a%20declarative,or%20reactive%20systems%20in%20general.).
+State management bi-direksional memungkinkan aliran data yang lebih fleksibel, di mana perubahan dalam state dapat dipropagasi ke kedua arah. Hal ini sering terkait dengan [_reactive programming_](https://www.baeldung.com/cs/reactive-programming#:~:text=Reactive%20programming%20is%20a%20declarative,or%20reactive%20systems%20in%20general.).
 
 **Karakteristik:**
 
 -   **Pembaruan reaktif:** Perubahan dalam state secara otomatis dapat meng-trigger pembaruan dalam UI, dan sebaliknya.
 -   **Observables:** Properti state direpresentasikan sebagai observables, yang dapat di-_observe_ untuk perubahan.
 
-State management bi-direksional, seperti yang diimplementasikan dalam MobX dan Valtio, memperkenalkan dinamika yang lebih kompleks dalam alur data aplikasi. Pembaruan reaktif memungkinkan perubahan keadaan secara langsung mencerminkan perubahan dalam antarmuka pengguna, dan sebaliknya, menciptakan keterkaitan erat antara model dan tampilan. Observables menjadi inti dari pendekatan ini, memungkinkan pemantauan yang efisien terhadap perubahan dalam keadaan, sehingga respons terhadap perubahan dapat terjadi dengan cepat dan efektif. Pendekatan bi-direksional cocok untuk aplikasi yang membutuhkan interaksi yang dinamis dan cepat antara keadaan dan tampilan.
+State management bi-direksional, seperti yang diimplementasikan dalam MobX dan Valtio, memperkenalkan dinamika yang lebih kompleks dalam alur data aplikasi. Pembaruan reaktif memungkinkan perubahan state secara langsung mencerminkan perubahan dalam antarmuka pengguna, dan sebaliknya, menciptakan keterkaitan erat antara model dan tampilan. Observables menjadi inti dari pendekatan ini, memungkinkan pemantauan yang efisien terhadap perubahan dalam state, sehingga respons terhadap perubahan dapat terjadi dengan cepat dan efektif. Pendekatan bi-direksional cocok untuk aplikasi yang membutuhkan interaksi yang dinamis dan cepat antara state dan UI aplikasi.
 
 ### Mobx
 
@@ -191,7 +191,7 @@ _Dikutip dari dokumentasi jotai,_
 
 > Build state by combining atoms and renders are automatically optimized based on atom dependency. This solves the extra re-render issue of React context, eliminates the need for memoization, and provides a similar developer experience to signals while maintaining a declarative programming model.
 
-State management atomic melibatkan pemecahan keadaan menjadi bagian-bagian kecil independen yang disebut sebagai atom. Setiap atom dapat dimodifikasi secara independen, dan komponen-komponen dapat _subscribe_ pada atom-atom tertentu untuk mendapatkan value terbaru. Sederhananya state management atomic menggunakan _atom_ sebagai satu sumber state dan kita bisa menggunakannya seperti hook _useState_ pada react namun kita bisa _share_ state/atom tersebut ke komponen lain tanpa melakukan [prop drilling](https://dev.to/codeofrelevancy/what-is-prop-drilling-in-react-3kol). Pendekatan ini menggabungkan pattern state component dan _global store_ seperti redux.
+State management atomic melibatkan pemecahan state menjadi bagian-bagian kecil independen yang disebut sebagai atom. Setiap atom dapat dimodifikasi secara independen, dan komponen-komponen dapat _subscribe_ pada atom-atom tertentu untuk mendapatkan value terbaru. Sederhananya state management atomic menggunakan _atom_ sebagai satu sumber state dan kita bisa menggunakannya seperti hook _useState_ pada react namun kita bisa _share_ state/atom tersebut ke komponen lain tanpa melakukan [prop drilling](https://dev.to/codeofrelevancy/what-is-prop-drilling-in-react-3kol). Pendekatan ini menggabungkan pattern state component dan _global store_ seperti redux.
 
 **Karakteristik:**
 
@@ -306,11 +306,11 @@ Finite State Machine (FSM) merupakan model konseptual yang dapat berada dalam sa
 
 > State machines: restricts the possible states something can be in, and limits the possibilities to move from one state to another.
 
-_Key characteristic_ dari FSM melibatkan satu set keadaan yang terdefinisi dengan baik dalam aplikasi dan transisi antar keadaan yang dipicu oleh _event_ spesifik. Selain itu, FSM dapat mengorganisir keadaan secara hierarkis, menyediakan representasi terstruktur dari perilaku aplikasi.
+_Key characteristic_ dari FSM melibatkan satu kumpulan state yang terdefinisi dengan baik dalam aplikasi dan transisi antar state yang dipicu oleh _event_ spesifik. Selain itu, FSM dapat mengorganisir state secara hierarki, menyediakan representasi terstruktur dari perilaku aplikasi.
 
 **Karakteristik:**
--   Status dan transisi: Sebuah aplikasi memiliki kumpulan state yang terdefinisi dengan baik, dan transisi antar state dipicu oleh _event_.
--   Status hierarki: Status dapat diatur secara hierarki, memberikan representasi terstruktur dari _behaviour_ aplikasi.
+-   States dan transisi: Sebuah aplikasi memiliki kumpulan state yang terdefinisi dengan baik, dan transisi antar state dipicu oleh _event_.
+-   Hierarchical states: States dapat diatur secara hierarki, memberikan representasi terstruktur dari _behaviour_ aplikasi.
 
 ### XState
 
