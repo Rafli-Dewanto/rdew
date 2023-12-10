@@ -17,7 +17,7 @@ type Props = {
 };
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content, remarkPluginFrontmatter } = await post.render();
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
@@ -27,7 +27,8 @@ const { Content } = await post.render();
         {post.data.title}
       </h1>
       <!-- Date -->
-      <div class="mt-[1.254rem] flex justify-end">
+      <div class="mt-[1.254rem] flex justify-between">
+        <p>{remarkPluginFrontmatter.minutesRead}</p>
         {formatDate(post.data.publishedAt)}
       </div>
     </header>
