@@ -15,7 +15,7 @@ const presentation: Presentation = {
     mail: "dewantorafli@gmail.com",
     title: "Hi, I’m Rafli Dewanto 👋",
     description:
-        "I am a *Software Engineer* from *Indonesia*, currently working with *Next.js* for *Fullstack Web Development*. In my leisure time, I am learning *Back-End Development* with *Go* and writing articles about my learning.",
+        "I am a *Software Engineer* from *Indonesia*, currently working with *Next.js* for *Fullstack Web Development*. In my leisure time, I am learning *Back-End Development* with *Go* and writing post about my learning.",
     socials: [
         {
             label: "Instagram",
