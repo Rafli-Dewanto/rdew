@@ -31,7 +31,7 @@ const presentation: Presentation = {
         },
     ],
     profile:
-        "https://media.licdn.com/dms/image/D5603AQEljt1TTN_XTA/profile-displayphoto-shrink_400_400/0/1698132288654?e=1704931200&v=beta&t=FHmjPvwdpQfulVO6MZ0J-HhfLrzVslLZWVPCXxnNEY0",
+        "https://lh3.googleusercontent.com/a/ACg8ocLtrHdGLj3yQ2p1byJFcaLOAXZ0ONCbuiGh8WsIO6yN5g=s512-c",
 } as const;
 
 export default presentation;
