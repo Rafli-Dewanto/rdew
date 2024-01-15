@@ -28,7 +28,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
                   height="18"
                   viewBox="0 0 18 18"
                   fill="none"
-                  class="transition-all duration-300 group-hover:translate-x-1"
+                  class="transition-all duration-300"
                 >
                   <path
                     d="M5.25 12.75L12.75 5.25"
@@ -45,7 +45,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
                 </svg>
               </div>
             </div>
-            <p>{post.data.description}</p>
+            <p class="truncate">{post.data.description}</p>
           </a>
         ))
       }

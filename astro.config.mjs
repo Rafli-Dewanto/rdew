@@ -8,6 +8,9 @@ import { remarkReadingTime } from './src/utils/remark-reading-time';
 
 // https://astro.build/config
 export default defineConfig({
+  prefetch: {
+    defaultStrategy: 'viewport'
+  },
   integrations: [tailwind(), sitemap(), robotsTxt()],
   site: SITE_URL,
   markdown: {
