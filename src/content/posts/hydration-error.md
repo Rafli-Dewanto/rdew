@@ -1,9 +1,9 @@
 ---
 title: 'Hydration Error di Next.js & Cara Mengatasinya'
-publishedAt: 2023-12-23
+publishedAt: 2024-01-15
 description: "Dalam dunia web development, rendering pattern/architecture adalah salah satu hal yang harus kita pahami sebagai software engineer."
 slug: "hydration-error"
-isPublish: false
+isPublish: true
 ---
 
 Dalam dunia web development, rendering pattern/architecture adalah salah satu hal yang harus kita pahami sebagai software engineer. Next.js, adalah salah satu react framework yang mendukung beberapa rendering pattern, salah satunya adalah Server-Side Rendering. 
