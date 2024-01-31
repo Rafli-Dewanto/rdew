@@ -1,17 +1,4 @@
-type Social = {
-    label: string;
-    link: string;
-};
-
-type Presentation = {
-    mail: string;
-    title: string;
-    description: string;
-    socials: Social[];
-    profile?: string;
-};
-
-const presentation: Presentation = {
+const presentation = {
     mail: "dewantorafli@gmail.com",
     title: "Hi, I’m Rafli Dewanto 👋",
     description:
@@ -30,8 +17,7 @@ const presentation: Presentation = {
             link: "https://github.com/Rafli-Dewanto",
         },
     ],
-    profile:
-        "https://lh3.googleusercontent.com/a/ACg8ocLtrHdGLj3yQ2p1byJFcaLOAXZ0ONCbuiGh8WsIO6yN5g=s512-c",
-} as const;
+    profile: "/pp-portfolio.jpeg",
+} as const
 
 export default presentation;
